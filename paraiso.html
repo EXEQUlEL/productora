@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paraiso | Mi Productora</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    header {
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img,
+    .gallery video,
+    .youtube-video {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .youtube-video iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .youtube-video iframe {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🎬 Mi Productora</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="paraiso.html">Paraíso</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h1>Proyecto Paraíso</h1>
+    <p>Una experiencia visual inspirada en la belleza natural y la emoción del instante. Mira nuestras tomas destacadas:</p>
+    <h2 style="margin-top: 2rem;">Video destacado</h2>
+    <div class="youtube-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nzbktftK69Y?si=5lrVEWvQIx0AgUvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  <div><h1>Galeria</h1></div>
+    <div class="gallery">
+      <img src="images/paraiso/paraiso1.jpeg" alt="Escena 1 de Paraíso" />
+      <img src="images/paraiso/paraiso2.jpeg" alt="Escena 2 de Paraíso" />
+      <img src="images/paraiso/paraiso3.jpeg" alt="Escena 2 de Paraíso" />
+      <img src="images/paraiso/paraiso4.jpeg" alt="Escena 2 de Paraíso" />
+      <img src="images/paraiso/paraiso5.jpeg" alt="Escena 2 de Paraíso" />
+      <img src="images/paraiso/paraiso6.jpeg" alt="Escena 2 de Paraíso" />
+      <img src="images/paraiso/paraiso7.jpeg" alt="Escena 2 de Paraíso" />
+      <img src="images/paraiso/paraiso8.jpeg" alt="Escena 2 de Paraíso" />
+      <img src="images/paraiso/paraiso9.jpeg" alt="Escena 2 de Paraíso" />
+      <video controls>
+        <source src="images/paraiso/paraiso10.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <video controls>
+        <source src="images/paraiso/paraiso11.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <video controls>
+        <source src="images/paraiso/paraiso12.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <video controls>
+        <source src="images/paraiso/paraiso13.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <video controls>
+        <source src="images/paraiso/paraiso14.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+      <video controls>
+        <source src="images/paraiso/paraiso15.mp4" type="video/mp4" />
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+
+  </div>
+
+  <footer style="text-align:center; padding: 1rem; background:#000;">
+    <p>&copy; 2025 Mi Productora</p>
+  </footer>
+</body>
+</html>

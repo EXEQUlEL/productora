@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio | Mi Productora</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/img1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .background-blur {
+      backdrop-filter: blur(6px);
+      background-color: rgba(0, 0, 0, 0.185);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      max-width: 100%;
+      margin: auto;
+      margin-top: 6rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .background-blur h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .background-blur p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff3b3f;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .background-blur {
+        margin: 5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🎬 Productora</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="background-blur">
+    <h1>Nombre de Productora</h1>
+    <p>En <strong>Nombre de Productora</strong>, cada proyecto es más que una entrega: es una historia que construimos junto a ti. Nos mueve la pasión por crear contenido con propósito, con estética, con alma.</p>
+    <p>Somos un equipo comprometido con la <strong>calidad</strong>, la <strong>creatividad</strong> y el <strong>profesionalismo</strong>. Amamos lo que hacemos, y eso se nota en cada plano, en cada corte, en cada detalle que cuidamos como si fuera propio.</p>
+    <p><em>Gracias por confiar en nosotros.</em> Aquí comienza un viaje juntos: uno donde tu visión y nuestra experiencia se unen para hacer algo extraordinario.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mi Productora</p>
+  </footer>
+</body>
+</html>

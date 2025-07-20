@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyectos | Mi Productora</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    .navbar {
+      background: #000;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .hero-banner {
+      position: relative;
+      height: 75vh;
+      background-image: url('images/paraiso/paraiso7.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 2em;
+    }
+
+    .hero-content {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      padding: 2em;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+    }
+
+    .play-button {
+      background-color: white;
+      color: black;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+
+    /* CARRUSEL */
+    .carousel-container {
+      padding: 2em;
+      background: #121212;
+      text-align: center;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 1em;
+      padding: 10px;
+    }
+
+    .project-card {
+      flex: 0 0 auto;
+      width: 160px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-bottom: 2px solid #333;
+    }
+
+    .project-card p {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+
+    .carousel-button {
+      display: none;
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .carousel-button.prev {
+      left: 0;
+    }
+
+    .carousel-button.next {
+      right: 0;
+    }
+
+    @media (min-width: 768px) {
+      .carousel-button {
+        display: block;
+      }
+
+      .carousel-track {
+        overflow-x: hidden;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🎬 Mi Productora</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero principal -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Family Business</h1>
+      <p>Una familia francesa transforma su carnicería en un negocio de cannabis... y las cosas se salen de control.</p>
+      <button class="play-button">▶ Ver ahora</button>
+    </div>
+  </section>
+
+  <!-- Carrusel con auto-slide -->
+  <section class="carousel-container">
+    <h2>Nuestra selección para ti</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-button prev">&#10094;</button>
+
+      <div class="carousel-track" id="carouselTrack">
+        <a href="paraiso.html" class="project-card">
+          <img src="images/paraiso/paraiso7.jpeg" alt="Paraiso" />
+          <p>Paraiso</p>
+        </a>
+        <a href="humanmobdesert.html" class="project-card">
+          <img src="images/humanmobdesert/desert9.jpg" alt="Humanmob" />
+          <p>Humanmob Proyect</p>
+        </a>
+        <a href="frame.html" class="project-card">
+          <img src="images/proyecto3.jpg" alt="La Casa del Frame" />
+          <p>La Casa del Frame</p>
+        </a>
+        <a href="gran-edicion.html" class="project-card">
+          <img src="images/proyecto4.jpg" alt="La Gran Edición" />
+          <p>La Gran Edición</p>
+        </a>
+        <a href="heroe.html" class="project-card">
+          <img src="images/proyecto5.jpg" alt="Cómo ser tu propio héroe" />
+          <p>Cómo ser tu propio héroe</p>
+        </a>
+      </div>
+
+      <button class="carousel-button next">&#10095;</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mi Productora. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JS para auto-slide -->
+  <script>
+    const track = document.getElementById('carouselTrack');
+    const nextBtn = document.querySelector('.carousel-button.next');
+    const prevBtn = document.querySelector('.carousel-button.prev');
+
+    let scrollStep = 200;
+
+    function autoScroll() {
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: scrollStep, behavior: 'smooth' });
+      }
+    }
+
+    let autoSlide = setInterval(autoScroll, 3000);
+
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: scrollStep, behavior: 'smooth' });
+      resetAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+      resetAutoSlide();
+    });
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(autoScroll, 3000);
+    }
+
+    track.addEventListener('touchstart', resetAutoSlide);
+  </script>
+
+</body>
+</html>
