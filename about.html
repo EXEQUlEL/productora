@@ -1,30 +1,276 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Sobre mí | Mi Productora</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipo | Productora</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff3b3f;
+    }
+
+    main {
+      padding-top: 5rem;
+    }
+
+    .carousel-section {
+      padding: 4rem 2rem;
+    }
+
+    .bg-dark {
+      background-color: #000;
+    }
+
+    .bg-red {
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+
+    .carousel {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .carousel.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .carousel-text, .carousel-media {
+      flex: 1 1 45%;
+    }
+
+    .carousel-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .carousel-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .carousel-media video,
+    .carousel-media img {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .carousel,
+      .carousel.reverse {
+        flex-direction: column;
+      }
+
+      .carousel-text,
+      .carousel-media {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header class="navbar">
-    <div class="logo">🎬 Mi Productora</div>
+    <div class="logo">🎬 Productora</div>
     <nav>
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="proyectos.html">Proyectos</a></li>
-        <li><a href="about.html">Sobre mí</a></li>
+        <li><a href="about.html">Equipo</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="container">
-    <h2>Sobre mí</h2>
-    <p>Soy un apasionado del video y la fotografía. Mi misión es crear contenido visual que comunique, emocione y transforme.</p>
-  </div>
+  <main>
+
+    <!-- Carrusel 1 (Texto derecha, fondo negro) -->
+    <section class="carousel-section bg-dark">
+      <div class="carousel reverse">
+        <div class="carousel-media"><div id="media-carousel-1"></div></div>
+        <div class="carousel-text">
+          <h2>Producción Visual</h2>
+          <p>Combinamos fotografía e imagen en movimiento para crear una narrativa visual potente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrusel 2 (Texto izquierda, fondo rojo) -->
+    <section class="carousel-section bg-red">
+      <div class="carousel">
+        <div class="carousel-text">
+          <h2>Calidad Cinematográfica</h2>
+          <p>Usamos tecnología de punta para lograr resultados cinematográficos impactantes.</p>
+        </div>
+        <div class="carousel-media"><div id="media-carousel-2"></div></div>
+      </div>
+    </section>
+
+    <!-- Carrusel 3 (Texto derecha, fondo negro) -->
+    <section class="carousel-section bg-dark">
+      <div class="carousel reverse">
+        <div class="carousel-media"><div id="media-carousel-3"></div></div>
+        <div class="carousel-text">
+          <h2>Movilidad y Técnica</h2>
+          <p>Capturamos desde múltiples ángulos gracias a estabilizadores, drones y lentes especiales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrusel 4 (Texto izquierda, fondo rojo) -->
+    <section class="carousel-section bg-red">
+      <div class="carousel">
+        <div class="carousel-text">
+          <h2>Ambientes Inmersivos</h2>
+          <p>Utilizamos iluminación y efectos como humo para reforzar la atmósfera de cada escena.</p>
+        </div>
+        <div class="carousel-media"><div id="media-carousel-4"></div></div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     <p>&copy; 2025 Mi Productora</p>
   </footer>
+
+  <script>
+    const carousels = [
+      {
+        id: "media-carousel-1",
+        files: [
+          "images/equipo/equipo4.mp4",
+          "images/equipo/equipo5.mp4",
+          "images/equipo/equipo10.mp4",
+          "images/equipo/equipo14.mp4",
+          "images/equipo/equipo3.jpg"
+        ]
+      },
+      {
+        id: "media-carousel-2",
+        files: [
+          "images/equipo/equipo6.mp4",
+          "images/equipo/equipo7.mp4",
+          "images/equipo/equipo8.mp4",
+          "images/equipo/equipo9.mp4",
+          "images/equipo/equipo11.mp4"
+        ]
+      },
+      {
+        id: "media-carousel-3",
+        files: [
+          "images/equipo/equipo12.mp4",
+          "images/equipo/equipo13.mp4",
+          "images/equipo/equipo15.mp4",
+          "images/equipo/equipo2.jpg",
+          "images/equipo/equipo16.mp4"
+        ]
+      },
+      {
+        id: "media-carousel-4",
+        files: [
+          "images/equipo/equipo17.mp4",
+          "images/equipo/equipo18.mp4",
+          "images/equipo/equipo19.mp4",
+          "images/equipo/equipo1.jpg",
+          "images/equipo/equipo20.mp4",
+          "images/equipo/equipo21.mp4"
+        ]
+      }
+    ];
+
+    carousels.forEach(carousel => {
+      const container = document.getElementById(carousel.id);
+      let index = 0;
+
+      function renderSlide(src) {
+        const ext = src.split('.').pop().toLowerCase();
+        const media = (ext === 'mp4') ? document.createElement('video') : document.createElement('img');
+
+        if (ext === 'mp4') {
+          media.src = src;
+          media.autoplay = true;
+          media.muted = true;
+          media.loop = true;
+        } else {
+          media.src = src;
+          media.alt = 'Slide';
+        }
+
+        container.innerHTML = '';
+        container.appendChild(media);
+      }
+
+      renderSlide(carousel.files[index]);
+      index = (index + 1) % carousel.files.length;
+
+      setInterval(() => {
+        renderSlide(carousel.files[index]);
+        index = (index + 1) % carousel.files.length;
+      }, 6000);
+    });
+  </script>
+
 </body>
 </html>
