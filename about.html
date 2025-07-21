@@ -2,34 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Equipo | Productora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
+      background-color: black;
       color: white;
-      background-color: #000;
+      line-height: 1.6;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
 
     .navbar {
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       position: fixed;
-      top: 0;
       width: 100%;
-      z-index: 1000;
+      z-index: 100;
     }
 
     .logo {
@@ -38,9 +38,9 @@
     }
 
     .navbar ul {
+      list-style: none;
       display: flex;
       gap: 1.5rem;
-      list-style: none;
     }
 
     .navbar a {
@@ -53,84 +53,112 @@
     .navbar a:hover {
       color: #ff3b3f;
     }
-
     main {
-      padding-top: 5rem;
+      margin-top: 3rem;
+      flex: 1;
     }
 
-    .carousel-section {
-      padding: 4rem 2rem;
-    }
-
-    .bg-dark {
-      background-color: #000;
-    }
-
-    .bg-red {
-      background-color: rgba(255, 0, 0, 0.1);
-    }
-
-    .carousel {
+    .section {
+      min-height: 550px;
+      background-color: rgba(0, 0, 0, 0.9);
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
+      padding: 6rem 2rem;
+      gap: 3rem;
       flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease-out, transform 1.6s ease-out;
     }
 
-    .carousel.reverse {
+    /* Alterna dirección y fondo en secciones pares */
+    .section:nth-child(even) {
       flex-direction: row-reverse;
+      background-color: rgba(255, 0, 0, 0.08);
     }
 
-    .carousel-text, .carousel-media {
-      flex: 1 1 45%;
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    .carousel-text h2 {
-      font-size: 2rem;
+    .text-content {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .text-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
       margin-bottom: 1rem;
+      color: white;
     }
 
-    .carousel-text p {
+    .text-content p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #ccc;
     }
 
-    .carousel-media video,
-    .carousel-media img {
-      width: 100%;
+    .media-content {
+      flex: 1 1 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
       max-height: 400px;
-      border-radius: 12px;
+    }
+
+    .media-content img,
+    .media-content video {
+      width: 100%;
+      max-width: 400px;
+      height: 100%;
       object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       display: block;
     }
 
     footer {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.7);
       text-align: center;
       padding: 1rem;
       margin-top: auto;
     }
 
     @media (max-width: 768px) {
-      .carousel,
-      .carousel.reverse {
+      .section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .text-content {
+        max-width: 90%;
+      }
+      .media-content {
+        max-width: 90%;
+        min-height: auto;
+        max-height: 300px;
+      }
+          footer {
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 1rem;
+    }
+      .navbar {
         flex-direction: column;
+        align-items: flex-start;
       }
 
-      .carousel-text,
-      .carousel-media {
-        flex: 1 1 100%;
-        text-align: center;
+      .navbar ul {
+        flex-direction: column;
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-
   <header class="navbar">
     <div class="logo">🎬 Productora</div>
     <nav>
@@ -142,63 +170,53 @@
       </ul>
     </nav>
   </header>
-
   <main>
-
-    <!-- Carrusel 1 (Texto derecha, fondo negro) -->
-    <section class="carousel-section bg-dark">
-      <div class="carousel reverse">
-        <div class="carousel-media"><div id="media-carousel-1"></div></div>
-        <div class="carousel-text">
-          <h2>Producción Visual</h2>
-          <p>Combinamos fotografía e imagen en movimiento para crear una narrativa visual potente.</p>
-        </div>
+    <!-- Sección 1 -->
+    <section class="section">
+      <div class="text-content">
+        <h2>Producción Visual</h2>
+        <p>Combinamos fotografía e imagen en movimiento para crear una narrativa visual potente.</p>
       </div>
+      <div class="media-content" id="carousel1"></div>
     </section>
 
-    <!-- Carrusel 2 (Texto izquierda, fondo rojo) -->
-    <section class="carousel-section bg-red">
-      <div class="carousel">
-        <div class="carousel-text">
-          <h2>Calidad Cinematográfica</h2>
-          <p>Usamos tecnología de punta para lograr resultados cinematográficos impactantes.</p>
-        </div>
-        <div class="carousel-media"><div id="media-carousel-2"></div></div>
+    <!-- Sección 2 -->
+    <section class="section">
+      <div class="text-content">
+        <h2>Calidad Cinematográfica</h2>
+        <p>Usamos tecnología de punta para lograr resultados cinematográficos impactantes.</p>
       </div>
+      <div class="media-content" id="carousel2"></div>
     </section>
 
-    <!-- Carrusel 3 (Texto derecha, fondo negro) -->
-    <section class="carousel-section bg-dark">
-      <div class="carousel reverse">
-        <div class="carousel-media"><div id="media-carousel-3"></div></div>
-        <div class="carousel-text">
-          <h2>Movilidad y Técnica</h2>
-          <p>Capturamos desde múltiples ángulos gracias a estabilizadores, drones y lentes especiales.</p>
-        </div>
+    <!-- Sección 3 -->
+    <section class="section">
+      <div class="text-content">
+        <h2>Movilidad y Técnica</h2>
+        <p>Capturamos desde múltiples ángulos gracias a estabilizadores, drones y lentes especiales.</p>
       </div>
+      <div class="media-content" id="carousel3"></div>
     </section>
 
-    <!-- Carrusel 4 (Texto izquierda, fondo rojo) -->
-    <section class="carousel-section bg-red">
-      <div class="carousel">
-        <div class="carousel-text">
-          <h2>Ambientes Inmersivos</h2>
-          <p>Utilizamos iluminación y efectos como humo para reforzar la atmósfera de cada escena.</p>
-        </div>
-        <div class="carousel-media"><div id="media-carousel-4"></div></div>
+    <!-- Sección 4 -->
+    <section class="section">
+      <div class="text-content">
+        <h2>Ambientes Inmersivos</h2>
+        <p>Utilizamos iluminación y efectos como humo para reforzar la atmósfera de cada escena.</p>
       </div>
+      <div class="media-content" id="carousel4"></div>
     </section>
-
   </main>
 
   <footer>
-    <p>&copy; 2025 Mi Productora</p>
+    &copy; 2025 Mi Productora
   </footer>
 
   <script>
+    // Carruseles
     const carousels = [
       {
-        id: "media-carousel-1",
+        id: "carousel1",
         files: [
           "images/equipo/equipo4.mp4",
           "images/equipo/equipo5.mp4",
@@ -208,7 +226,7 @@
         ]
       },
       {
-        id: "media-carousel-2",
+        id: "carousel2",
         files: [
           "images/equipo/equipo6.mp4",
           "images/equipo/equipo7.mp4",
@@ -218,7 +236,7 @@
         ]
       },
       {
-        id: "media-carousel-3",
+        id: "carousel3",
         files: [
           "images/equipo/equipo12.mp4",
           "images/equipo/equipo13.mp4",
@@ -228,7 +246,7 @@
         ]
       },
       {
-        id: "media-carousel-4",
+        id: "carousel4",
         files: [
           "images/equipo/equipo17.mp4",
           "images/equipo/equipo18.mp4",
@@ -240,35 +258,54 @@
       }
     ];
 
-    carousels.forEach(carousel => {
-      const container = document.getElementById(carousel.id);
+    carousels.forEach(c => {
+      const container = document.getElementById(c.id);
       let index = 0;
 
-      function renderSlide(src) {
+      function showMedia(src) {
         const ext = src.split('.').pop().toLowerCase();
         const media = (ext === 'mp4') ? document.createElement('video') : document.createElement('img');
 
         if (ext === 'mp4') {
           media.src = src;
           media.autoplay = true;
-          media.muted = true;
           media.loop = true;
+          media.muted = true;
+          media.playsInline = true;
         } else {
           media.src = src;
-          media.alt = 'Slide';
+          media.alt = "Slide";
         }
+
+        media.style.width = "350px";
+        media.style.height = "500px";
+        media.style.objectFit = "cover";
 
         container.innerHTML = '';
         container.appendChild(media);
       }
 
-      renderSlide(carousel.files[index]);
-      index = (index + 1) % carousel.files.length;
+      showMedia(c.files[index]);
+      index = (index + 1) % c.files.length;
 
       setInterval(() => {
-        renderSlide(carousel.files[index]);
-        index = (index + 1) % carousel.files.length;
+        showMedia(c.files[index]);
+        index = (index + 1) % c.files.length;
       }, 6000);
+    });
+
+    // Animación al hacer scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // animar solo una vez
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
     });
   </script>
 
